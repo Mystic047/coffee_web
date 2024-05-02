@@ -20,8 +20,9 @@ jobs:
 
       - name: Install Composer dependencies
         run: |
-          composer install --no-dev --optimize-autoloader
           composer update
+          composer install --no-dev --optimize-autoloader
+          
 
       - name: Copy .env file
         run: cp .env.example .env
