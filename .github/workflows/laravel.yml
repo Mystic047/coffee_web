@@ -19,7 +19,9 @@ jobs:
           php-version: '8.0^'
 
       - name: Install Composer dependencies
-        run: composer install --no-dev --optimize-autoloader
+        run: |
+          composer install --no-dev --optimize-autoloader
+          composer update
 
       - name: Copy .env file
         run: cp .env.example .env
