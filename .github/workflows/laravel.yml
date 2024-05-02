@@ -1,0 +1,35 @@
+name: Deploy Laravel Application
+
+on:
+  push:
+    branches:
+      - main  # Change this to the branch you want to deploy
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Install PHP and dependencies
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.0'
+
+      - name: Install Composer dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: Copy .env file
+        run: cp .env.example .env
+
+      - name: Generate application key
+        run: php artisan key:generate
+
+      - name: Deploy Laravel application
+        run: |
+          # Add your deployment commands here
+          php artisan migrate --force
+          php artisan config:cache
+          php artisan route:cache
