@@ -1,0 +1,36 @@
+*{
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.img-fluid {
+    display: block;
+    margin: auto;
+}
+.even-row {
+    background-color: #ffffff; /* สีพื้นหลังสำหรับแถวที่เป็นคู่ */
+}
+
+.odd-row {
+    background-color: #ffffff; /* สีพื้นหลังสำหรับแถวที่เป็นคี่ */
+}
+
+
+.ul-left {
+    list-style-type: none;
+    padding-left: 0;
+}
+.text-left {
+    text-align: left;
+}
+
+.ul-left {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.img-right {
+        float: right;
+        margin-left: 20px; /* ปรับระยะห่างของรูปภาพจากเนื้อหา */
+        max-width: 80%; /* กำหนดความกว้างสูงสุดของรูปภาพ */
+        height: auto; /* รักษาอัตราส่วนของรูปภาพ */
+    }
